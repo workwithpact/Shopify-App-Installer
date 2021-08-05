@@ -30,7 +30,7 @@ function App() {
   <Layout>
     <Layout.Section>
       <Card title="Install a custom Shopify App" sectioned>
-        {window.location.search && window.location.pathname.indexOf('callback') !== -1 ? 
+        {params.get('code') ? 
           <p>Congrats, your app should be installed!</p>
         :
         <>
