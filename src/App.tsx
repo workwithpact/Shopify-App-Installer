@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppProvider, Page, Card, Layout, Form, FormLayout, TextField, Button } from '@shopify/polaris';
 function App() {
   const params = new URLSearchParams(window.location.search || '')
-  const [store, setStore] = useState(params.get('shop') || '');
+  const [store, setStore] = useState(`${(params.get('shop') || '').split('.myshopify.com').shift()}`);
   const [apiKey, setApiKey] = useState('');
   const [scopes, setScopes] = useState('read_products');
   const [callbackUrl, setCallbackUrl] = useState('https://shopify.workwithpact.com/')
