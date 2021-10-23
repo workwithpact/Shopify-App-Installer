@@ -29,9 +29,9 @@ function App() {
   <Page>
   <Layout>
     <Layout.Section>
-      <Card title="Install a custom Shopify App" sectioned>
-        {params.get('code') ? 
-          <p>Congrats, your app should be installed!</p>
+      <Card title={params.get('shop') ? 'App installed successfully' : "Install a custom Shopify App"} sectioned>
+        {params.get('code') || params.get('shop') ? 
+          params.get('code') ? <p>Congrats, your app should be installed!</p> : <><p>This app has been successfully installed!</p><p>While this app has no admin controls, it is indeed being used, most likely to augment your store with some features, through the use of an App Proxy.</p><p>If you have any question, please reach out to your developper team</p></>
         :
         <>
           <p>Simply fill out the form, click submit, and if you set your stuff up well, it'll all magically work :)</p>
